@@ -1,2 +1,6 @@
 User-agent: *
 Disallow: /author/
+
+
+User-agent: *
+Disallow: /author/gonzalo-ballestero/
