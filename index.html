@@ -861,7 +861,7 @@
 
     
 <p>
-  <a href="#" onclick="document.getElementById('abstract1').style.display='block'; return false;">[Abstract]</a>
+  <a href="#" onclick="toggleAbstract('abstract1'); return false;">[Abstract]</a>
 </p>
 
 <div id="abstract1" style="display: none; margin-bottom: 1em;">
@@ -869,7 +869,13 @@
     We study the emergence of algorithmic collusion in a sequential pricing game with stochastic costs. Using simulations, we show that pricing algorithms may learn to sustain supra-competitive prices even under cost volatility, highlighting novel regulatory risks in digital markets.
   </p>
 </div>
-  
+
+<script>
+  function toggleAbstract(id) {
+    var el = document.getElementById(id);
+    el.style.display = (el.style.display === 'none' || el.style.display === '') ? 'block' : 'none';
+  }
+</script>
 
   
   
