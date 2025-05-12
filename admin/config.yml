@@ -1,5 +1,4 @@
-params:
-  disable_author_pages: true
+
 
 
 backend:
@@ -305,3 +304,6 @@ collections:
             widget: "boolean"
             default: false
           - {label: "Body", name: "body", widget: "markdown"}
+
+          params:
+  disable_author_pages: true
