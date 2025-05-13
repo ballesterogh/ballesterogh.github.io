@@ -12,7 +12,7 @@ collections:
     label_singular: Author
     folder: 'content/authors'
     path: '{{slug}}/_index'
-    create: true  # Allow users to create new documents in this collection
+    create: false  # not Allow users to create new documents in this collection
     fields:  # The fields each document in this collection have
       - {label: "Display name (such as your full name)", name: "title", widget: "string"}
       - {label: "Position or tagline (such as Professor of AI)", name: "role", widget: "string", required: false}
@@ -305,5 +305,4 @@ collections:
             default: false
           - {label: "Body", name: "body", widget: "markdown"}
 
-          params:
-  disable_author_pages: true
+         
