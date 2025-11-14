@@ -6,57 +6,76 @@
   <title>Gonzalo Ballestero</title>
   <meta name="description" content="Gonzalo Ballestero professional webpage. Research, CV and Contact.">
   <link rel="icon" type="image/png" href="/images/icon.png">
+
   <style>
     html { font-size: 15px; scroll-behavior: smooth; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
         Cantarell, "Helvetica Neue", Arial, sans-serif;
-      line-height: 1.55;
+      line-height: 1.6;
       color: #222;
       margin: 0;
-      padding: 2rem 1rem;
+      padding: 2rem 1.5rem;
       background: #fff;
     }
-    .wrap { max-width: 720px; margin: 0 auto; }
-    h1, h2, h3 { font-weight: 600; line-height: 1.25; margin: 1.5rem 0 0.75rem; }
-    h1 { font-size: 1.8rem; color: #000; text-align: center; margin-bottom: 0.25rem; }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    a { color: #2962ff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    h1, h2, h3 { font-weight: 600; line-height: 1.25; margin-top: 1.8rem; }
+    h1 { font-size: 1.8rem; color: #000; }
     h2 { font-size: 1.3rem; color: #2962ff; border-bottom: 1px solid #eaeaea; padding-bottom: 0.3rem; }
     h3 { font-size: 1.1rem; color: #000; margin-top: 1.2rem; }
     p, li { font-size: 0.95rem; }
-    a { color: #2962ff; text-decoration: none; }
-    a:hover { text-decoration: underline; }
     img.avatar {
       display: block;
-      max-width: 180px;
+      width: 180px;
       height: auto;
       border-radius: 4px;
-      margin: 0 auto 1rem;
     }
-    footer { margin-top: 3rem; text-align: center; color: #777; font-size: 0.9rem; }
-    @media (prefers-color-scheme: dark) {
-      body { background: #0f0f10; color: #ddd; }
-      h2 { border-bottom-color: #333; }
-      a { color: #7aa8ff; }
-      footer { color: #999; }
+    header {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .intro {
+      flex: 1;
+      min-width: 280px;
+    }
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      color: #777;
+      font-size: 0.9rem;
+      padding-top: 2rem;
+      border-top: 1px solid #eee;
     }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
+  <div class="container">
 
     <!-- Header -->
-    <img src="/images/avatar.jpg" alt="Gonzalo Ballestero" class="avatar">
-    <h1>Gonzalo Ballestero</h1>
-    <p style="text-align:center;">Ph.D. in Economics · Pennsylvania State University</p>
-
-    <p align="justify">
-      I am a Ph.D. candidate in Economics at the Pennsylvania State University. 
-      My research is on market design and AI behavioral science.
-    </p>
-
-    <p>Here is my <a href="/files/cv.pdf" target="_blank">curriculum vitae</a>.</p>
-    <p>Email: <a href="mailto:gballestero@psu.edu">gballestero@psu.edu</a></p>
+    <header>
+      <img src="/images/avatar.jpg" alt="Gonzalo Ballestero" class="avatar">
+      <div class="intro">
+        <h1>Gonzalo Ballestero</h1>
+        <p><strong>Ph.D. in Economics · Pennsylvania State University</strong></p>
+        <p align="justify">
+          I am a Ph.D. candidate in Economics at the Pennsylvania State University. 
+          My research is on market design and AI behavioral science.
+        </p>
+        <p>
+          Here is my <a href="/files/cv.pdf" target="_blank">curriculum vitae</a>.<br>
+          Email: <a href="mailto:gballestero@psu.edu">gballestero@psu.edu</a>
+        </p>
+      </div>
+    </header>
 
     <!-- Research -->
     <h2 id="research">Research</h2>
@@ -137,4 +156,5 @@
   </script>
 </body>
 </html>
+
 
