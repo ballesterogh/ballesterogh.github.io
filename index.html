@@ -43,9 +43,13 @@
       flex-wrap: wrap;
     }
     .intro {
-      flex: 1;
-      min-width: 280px;
-    }
+    flex: 1;
+    min-width: 280px;
+    max-width: 550px;      /* NUEVO: limita la anchura del texto */
+    margin-left: auto;     /* empuja hacia el centro */
+    margin-right: auto;    /* empuja simétricamente */
+    text-align: center;
+}
     footer {
       margin-top: 3rem;
       text-align: center;
