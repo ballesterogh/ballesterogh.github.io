@@ -54,7 +54,30 @@
       padding-top: 2rem;
       border-top: 1px solid #eee;
     }
+
+
+    @media (max-width: 600px) {
+
+  header {
+    flex-direction: column-reverse;   /* texto primero, foto después */
+    text-align: center;
+  }
+
+  img.avatar {
+    margin: 0 auto;                   /* centrar foto */
+    display: block;
+    width: 65%;                       /* más proporcional en móvil */
+    max-width: 300px;                 /* evita que sea demasiado grande */
+  }
+
+  .intro {
+    text-align: justify;              /* mantiene el estilo del texto */
+    width: 100%;
+  }
+}
   </style>
+
+
 </head>
 
 <body>
