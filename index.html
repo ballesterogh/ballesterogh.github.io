@@ -1,68 +1,132 @@
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gonzalo Ballestero</title>
-  <meta name="description" content="Personal website — single column, titles only." />
+  <meta name="description" content="Gonzalo Ballestero professional webpage. Research, CV and Contact.">
+  <link rel="icon" type="image/png" href="/images/icon.png">
   <style>
-    html { font-size: 15px; }
+    html { font-size: 15px; scroll-behavior: smooth; }
     body {
-      margin: 0; padding: 2.5rem 1.25rem; color: #222;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-        Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
-      line-height: 1.5;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+        Cantarell, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.55;
+      color: #222;
+      margin: 0;
+      padding: 2rem 1rem;
       background: #fff;
     }
     .wrap { max-width: 720px; margin: 0 auto; }
-    h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.25rem; }
-    h2 { font-size: 1.3rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.5rem; }
-    p { font-size: 0.95rem; margin: 0.5rem 0; }
-    a { color: #000; text-decoration: none; }
+    h1, h2, h3 { font-weight: 600; line-height: 1.25; margin: 1.5rem 0 0.75rem; }
+    h1 { font-size: 1.8rem; color: #000; text-align: center; margin-bottom: 0.25rem; }
+    h2 { font-size: 1.3rem; color: #2962ff; border-bottom: 1px solid #eaeaea; padding-bottom: 0.3rem; }
+    h3 { font-size: 1.1rem; color: #000; margin-top: 1.2rem; }
+    p, li { font-size: 0.95rem; }
+    a { color: #2962ff; text-decoration: none; }
     a:hover { text-decoration: underline; }
-    footer { margin-top: 2.5rem; color: #777; font-size: 0.9rem; }
-
+    img.avatar {
+      display: block;
+      max-width: 180px;
+      height: auto;
+      border-radius: 4px;
+      margin: 0 auto 1rem;
+    }
+    footer { margin-top: 3rem; text-align: center; color: #777; font-size: 0.9rem; }
     @media (prefers-color-scheme: dark) {
       body { background: #0f0f10; color: #ddd; }
-      a { color: #eee; }
-      footer { color: #9a9a9a; }
+      h2 { border-bottom-color: #333; }
+      a { color: #7aa8ff; }
+      footer { color: #999; }
     }
   </style>
 </head>
+
 <body>
   <div class="wrap">
-    <header>
-      <h1>Gonzalo Ballestero</h1>
-      <p>Applied Economist · Market Design & AI Behavioral Science</p>
-    </header>
 
-    <main>
-      <h2>Research</h2>
-      <p><!-- breve descripción opcional --></p>
+    <!-- Header -->
+    <img src="/images/avatar.jpg" alt="Gonzalo Ballestero" class="avatar">
+    <h1>Gonzalo Ballestero</h1>
+    <p style="text-align:center;">Ph.D. in Economics · Pennsylvania State University</p>
 
-      <h2>Publications</h2>
-      <p><!-- breve descripción opcional --></p>
+    <p align="justify">
+      I am a Ph.D. candidate in Economics at the Pennsylvania State University. 
+      My research is on market design and AI behavioral science.
+    </p>
 
-      <h2>Teaching</h2>
-      <p><!-- breve descripción opcional --></p>
+    <p>Here is my <a href="/files/cv.pdf" target="_blank">curriculum vitae</a>.</p>
+    <p>Email: <a href="mailto:gballestero@psu.edu">gballestero@psu.edu</a></p>
 
-      <h2>CV</h2>
-      <p><!-- enlace o descripción opcional --></p>
+    <!-- Research -->
+    <h2 id="research">Research</h2>
 
-      <h2>Contact</h2>
-      <p><!-- información de contacto o enlace --></p>
-    </main>
+    <h3>Working Papers</h3>
+    <p>
+      <a href="/files/algo_collusion.pdf" target="_blank">
+        Algorithmic Collusion under Sequential Pricing and Stochastic Costs</a>,
+      Revise and Resubmit at <em>International Journal of Industrial Organization</em>.
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5203084" target="_blank">[SSRN]</a>
+    </p>
+    <p align="justify" style="font-size:0.9rem;">
+      The use of pricing algorithms raises concerns about algorithmic collusion. This paper considers a sequential pricing model where marginal cost fluctuates over time. I find that Q-learning algorithms autonomously collude even under cost uncertainty. Collusion is sustained by strategies that involve reward-punishment schemes. It suggests that cost uncertainty is not an obstacle to autonomous algorithmic collusion.
+    </p>
 
+    <h3>Work in Progress</h3>
+    <p><strong>Learning to Play the Match Again</strong><br>
+       Draft coming soon.</p>
+
+    <h3>Publications (prior to the PhD)</h3>
+    <p>
+      <a href="/files/kuhn-tucker.pdf" target="_blank">
+        Constraint Qualification Analysis in the Kuhn-Tucker Theorem</a> (with Pablo Herrera),
+      <em>Revista de Investigación en Modelos Matemáticos Aplicados a la Gestión y la Economía</em>, 34 (2019): 26–39.
+    </p>
+
+    <h3>Policy Briefs</h3>
+    <p><strong>Irregularidades en el Examen de Ingreso al Sistema Nacional de Residencias Médicas 2025</strong></p>
+    <p><strong>El Sistema Nacional de Residencias Médicas: Hacia un Acceso Más Equitativo</strong><br>
+      Media coverage:
+      <a href="https://www.lanacion.com.ar/sociedad/la-lucha-por-un-lugar-asi-fue-el-megaexamen-con-13476-inscriptos-y-7687-vacantes-para-residencias-nid01072025/" target="_blank"><em>La Nación</em></a>,
+      <a href="https://www.clarin.com/sociedad/gobierno-anuncio-cambio-clave-sistema-residencias-medicas_0_yqDEQrtZ1n.html" target="_blank"><em>Clarín</em></a>,
+      <a href="https://econ.la.psu.edu/news/gonzalo-ballestero-ph-d-student-in-economics-is-featured-in-la-nacion-he-is-advising-the-argentine-authorities-in-the-reform-of-their-centralized-assignment-mechanisms-for-medical-students-to-re/" target="_blank"><em>Penn State News</em></a>.
+    </p>
+
+    <!-- Teaching -->
+    <h2 id="teaching">Teaching</h2>
+    <h3>Pennsylvania State University</h3>
+    <ul>
+      <li>Advanced Microeconomic Theory (Fall 2025)</li>
+      <li>Economics of Matching (Spring 2025)</li>
+      <li>Advanced Econometrics (Fall 2024)</li>
+    </ul>
+
+    <h3>Universidad de San Andrés</h3>
+    <ul><li>Intermediate Microeconomics (Fall 2020)</li></ul>
+
+    <h3>Universidad de Buenos Aires</h3>
+    <ul>
+      <li>Industrial Organization (Fall 2019)</li>
+      <li>Mathematics for Economists (Fall 2018 – Fall 2019)
+        <a href="/files/recorrido_matematica.pdf" target="_blank">[miscellaneous]</a></li>
+    </ul>
+
+    <!-- CV -->
+    <h2 id="cv">Curriculum Vitae</h2>
+    <p>Full version available <a href="/files/cv.pdf" target="_blank">here</a>.</p>
+
+    <!-- Contact -->
+    <h2 id="contact">Contact</h2>
+    <p>Email: <a href="mailto:gballestero@psu.edu">gballestero@psu.edu</a></p>
+    <p>Location: Pennsylvania, United States</p>
+    <p>
+      <a href="https://twitter.com/ballesterogh" target="_blank">Twitter</a> ·
+      <a href="https://scholar.google.com.ar/citations?user=Xm9sw5cAAAAJ&hl=es" target="_blank">Google Scholar</a> ·
+      <a href="https://github.com/ballesterogh" target="_blank">GitHub</a> ·
+      <a href="https://www.linkedin.com/in/gonzalo-ballestero/" target="_blank">LinkedIn</a>
+    </p>
+
+    <!-- Footer -->
     <footer>
       <small>© <span id="y"></span> Gonzalo Ballestero</small>
     </footer>
@@ -73,3 +137,4 @@
   </script>
 </body>
 </html>
+
