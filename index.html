@@ -3,16 +3,14 @@
 <head>
 
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-91VNGR6X66"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-91VNGR6X66"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-91VNGR6X66');
+  </script>
 
-  gtag('config', 'G-91VNGR6X66');
-</script>
-  
-  
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gonzalo Ballestero</title>
@@ -28,6 +26,7 @@
       --h2-color: #2962ff;
       --border: #999;
       --footer-border: #eee;
+      --icon-color: #757575;
     }
     [data-theme="dark"] {
       --bg: #1a1a1a;
@@ -37,6 +36,7 @@
       --h2-color: #6b9eff;
       --border: #444;
       --footer-border: #333;
+      --icon-color: #bdbdbd;
     }
     * { transition: background 0.2s, color 0.2s; }
 
@@ -50,10 +50,7 @@
       padding: 2rem 1.5rem;
       background: var(--bg);
     }
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
+    .container { max-width: 1000px; margin: 0 auto; }
     a { color: var(--link); text-decoration: none; }
     a:hover { text-decoration: underline; }
     h1, h2, h3 { font-weight: 600; line-height: 1.25; margin-top: 1.8rem; }
@@ -61,19 +58,8 @@
     h2 { font-size: 1.7rem; color: var(--h2-color); border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
     h3 { font-size: 1.3rem; color: var(--text); margin-top: 1.2rem; }
     p, li { font-size: 1.05rem; }
-    img.avatar {
-      display: block;
-      width: 380px;
-      height: auto;
-      border-radius: 4px;
-    }
-    header {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      margin-bottom: 2.5rem;
-      flex-wrap: wrap;
-    }
+    img.avatar { display: block; width: 380px; height: auto; border-radius: 4px; }
+    header { display: flex; align-items: center; gap: 2rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
     .intro {
       flex: 1;
       min-width: 280px;
@@ -93,195 +79,169 @@
 
     #toggleBtn {
       position: fixed;
-      top: 1.2rem;
+      top: 0.9rem;
       right: 1.5rem;
-      background: #e0e0e0;
+      background: none;
       border: none;
-      border-radius: 50px;
-      width: 48px;
-      height: 26px;
       cursor: pointer;
-      font-size: 16px;
+      padding: 4px;
       z-index: 100;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-    #toggleBtn:hover { opacity: 0.8; }
+    #toggleBtn:hover { opacity: 0.6; }
+    #toggleBtn svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--icon-color);
+      transition: fill 0.2s;
+    }
 
     @media (max-width: 600px) {
-
-  header {
-    flex-direction: column-reverse;   
-    text-align: center;
-  }
-
-  img.avatar {
-     display: block;
-      width: 300px;   
-      height: auto;
-      border-radius: 4px;
-  }
-
-  .intro {
-    text-align: center;             
-    width: 100%;
-  }
-}
+      header { flex-direction: column-reverse; text-align: center; }
+      img.avatar { display: block; width: 300px; height: auto; border-radius: 4px; }
+      .intro { text-align: center; width: 100%; }
+    }
   </style>
-
 
 </head>
 
 <body>
 
-  <button id="toggleBtn" title="Cambiar modo claro/oscuro">🌙</button>
+  <button id="toggleBtn" title="Cambiar modo claro/oscuro" aria-label="Cambiar modo claro/oscuro">
+    <!-- ícono luna (modo claro → click pone oscuro) -->
+    <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+    </svg>
+    <!-- ícono sol (modo oscuro → click pone claro) -->
+    <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="display:none;">
+      <path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0-13a1 1 0 0 0 1-1V2a1 1 0 0 0-2 0v1a1 1 0 0 0 1 1zm0 14a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1zm9-8h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2zM4 12a1 1 0 0 0-1-1H2a1 1 0 0 0 0 2h1a1 1 0 0 0 1-1zm14.95 5.54-1.41-1.41a1 1 0 0 0-1.41 1.41l1.41 1.41a1 1 0 0 0 1.41-1.41zm-12.9 0a1 1 0 0 0-1.41 0l-1.41 1.41a1 1 0 0 0 1.41 1.41l1.41-1.41a1 1 0 0 0 0-1.41zm12.9-13.08a1 1 0 0 0-1.41 0l-1.41 1.41a1 1 0 0 0 1.41 1.41l1.41-1.41a1 1 0 0 0 0-1.41zM6.05 6.46 4.64 5.05a1 1 0 0 0-1.41 1.41l1.41 1.41a1 1 0 0 0 1.41-1.41z"/>
+    </svg>
+  </button>
 
   <div class="container">
 
     <!-- Header -->
     <header>
-  <img src="/images/avatar.jpg" alt="Gonzalo Ballestero" class="avatar">
-  <div class="intro">
-    <div style="text-align: center;">
-      <h1 style="margin-bottom: 0.2em;">Gonzalo Ballestero</h1>
-    </div>
+      <img src="/images/avatar.jpg" alt="Gonzalo Ballestero" class="avatar">
+      <div class="intro">
+        <div style="text-align: center;">
+          <h1 style="margin-bottom: 0.2em;">Gonzalo Ballestero</h1>
+        </div>
+        <p align="center" style="margin-top: 1.5em;">
+          I am a Ph.D. candidate in Economics at Penn State University.
+        </p>
+        <p align="center">
+          I am an applied microeconomist working at the intersection of empirical market design, applied AI, and industrial organization.
+        </p>
+        <p>Here you can find my <a href="/files/cv.pdf" target="_blank">curriculum vitae</a>.</p>
+        <p>You can contact me at <a href="mailto:gballestero@psu.edu" target="_blank">gballestero@psu.edu</a>.</p>
+        <p>Visit our <a href="https://ai-initiative.psu.edu/" target="_blank">AI and the Economy Initiative</a> at Penn State.</p>
+      </div>
+    </header>
 
-    <p align="center" style="margin-top: 1.5em;">
-      I am a Ph.D. candidate in Economics at Penn State University.
-    </p>
-    <p align="center">
-      I am an applied microeconomist working at the intersection of empirical market design, applied AI, and industrial organization.
-    </p>
+    <!-- Research -->
+    <hr style="border: 0; border-top: 1px solid var(--border); margin-top: 0.5rem; margin-bottom: 0.5rem;">
 
-    <p>
-  Here you can find my <a href="/files/cv.pdf" target="_blank">curriculum vitae</a>.
-</p>
-<p>
-  You can contact me at <a href="mailto:gballestero@psu.edu" target="_blank">gballestero@psu.edu</a>.
-</p>
-
-    <p>
-  Visit our <a href="https://ai-initiative.psu.edu/" target="_blank">AI and the Economy Initiative</a> at Penn State.
-</p>
-
-    
-  </div>
-</header>
-
-
-<!-- Research -->
-    
- <hr style="border: 0; border-top: 1px solid var(--border); margin-top: 0.5rem; margin-bottom: 0.5rem;">
-
-<h3>Working Papers</h3>
+    <h3>Working Papers</h3>
 
     <p>
       <a href="https://arxiv.org/abs/2604.09502" target="_blank">
-      <strong>Strategic Algorithmic Monoculture: Experimental Evidence from Coordination Games</strong> </a>(with 
-      <a href="https://faculty.ist.psu.edu/hadi/"
-     target="_blank"
-     style="color: inherit; text-decoration: underline;">Hadi Hosseini</a>,
-       <a href="https://samarthkhanna.github.io/"
-     target="_blank"
-     style="color: inherit; text-decoration: underline;">Samarth Khanna</a>,
-        <a href="https://rshorrer.weebly.com/"
-     target="_blank"
-     style="color: inherit; text-decoration: underline;">Ran I. Shorrer</a>)</p>
+        <strong>Strategic Algorithmic Monoculture: Experimental Evidence from Coordination Games</strong>
+      </a> (with
+      <a href="https://faculty.ist.psu.edu/hadi/" target="_blank" style="color: inherit; text-decoration: underline;">Hadi Hosseini</a>,
+      <a href="https://samarthkhanna.github.io/" target="_blank" style="color: inherit; text-decoration: underline;">Samarth Khanna</a>,
+      <a href="https://rshorrer.weebly.com/" target="_blank" style="color: inherit; text-decoration: underline;">Ran I. Shorrer</a>)
+    </p>
     <p align="justify" style="font-size:0.9rem;">
-  AI agents increasingly operate in multi-agent environments where outcomes depend on coordination. We distinguish primary algorithmic monoculture (baseline action similarity) from strategic algorithmic monoculture, whereby agents adjust similarity in response to incentives. We implement a simple experimental design that cleanly separates these forces, and deploy it on human and large language model (LLM) subjects. LLMs exhibit high levels of baseline similarity (primary monoculture) and, like humans, they regulate it in response to coordination incentives (strategic monoculture). While LLMs coordinate extremely well on similar actions, they lag behind humans in sustaining heterogeneity when divergence is rewarded.
-</p>
-    
-<h3 style="margin-top: 2rem;">Publications</h3>
-<p>
-  <a href="https://www.sciencedirect.com/science/article/pii/S0167718726000342" target="_blank">
-    <strong>Algorithmic Collusion under Sequential Pricing and Stochastic Costs</strong></a><br>
-  Forthcoming at the <em>International Journal of Industrial Organization</em>, April 2026
-</p>
+      AI agents increasingly operate in multi-agent environments where outcomes depend on coordination. We distinguish primary algorithmic monoculture (baseline action similarity) from strategic algorithmic monoculture, whereby agents adjust similarity in response to incentives. We implement a simple experimental design that cleanly separates these forces, and deploy it on human and large language model (LLM) subjects. LLMs exhibit high levels of baseline similarity (primary monoculture) and, like humans, they regulate it in response to coordination incentives (strategic monoculture). While LLMs coordinate extremely well on similar actions, they lag behind humans in sustaining heterogeneity when divergence is rewarded.
+    </p>
 
-<p align="justify" style="font-size:0.9rem;">
-  The use of pricing algorithms raises concerns about algorithmic collusion. This paper considers a sequential pricing model where marginal cost fluctuates over time. I find that Q-learning algorithms autonomously collude even under cost uncertainty. Collusion is sustained by strategies that involve reward-punishment schemes. It suggests that cost uncertainty is not an obstacle to autonomous algorithmic collusion.
-</p>
+    <h3 style="margin-top: 2rem;">Publications</h3>
+    <p>
+      <a href="https://www.sciencedirect.com/science/article/pii/S0167718726000342" target="_blank">
+        <strong>Algorithmic Collusion under Sequential Pricing and Stochastic Costs</strong>
+      </a><br>
+      Forthcoming at the <em>International Journal of Industrial Organization</em>, April 2026
+    </p>
+    <p align="justify" style="font-size:0.9rem;">
+      The use of pricing algorithms raises concerns about algorithmic collusion. This paper considers a sequential pricing model where marginal cost fluctuates over time. I find that Q-learning algorithms autonomously collude even under cost uncertainty. Collusion is sustained by strategies that involve reward-punishment schemes. It suggests that cost uncertainty is not an obstacle to autonomous algorithmic collusion.
+    </p>
 
-<h3 style="margin-top: 2rem;">Work in Progress</h3>
-
-<p><strong>Centralized Admission Mechanisms and International Migration</strong></p>
-    
-<p><strong>Information Frictions and Biased Beliefs in Centralized Admissions</strong></p>
+    <h3 style="margin-top: 2rem;">Work in Progress</h3>
+    <p><strong>Centralized Admission Mechanisms and International Migration</strong></p>
+    <p><strong>Information Frictions and Biased Beliefs in Centralized Admissions</strong></p>
 
     <!--
     <hr style="border: 0; border-top: 1px solid var(--border); margin-top: 1.5rem; margin-bottom: 0.5rem;">
 
-
     <h3 style="margin-top: 1.5rem;">Publications (prior to the PhD)</h3>
 
     <p>
-  <a href="/files/chapter_nanotecnologia.pdf" target="_blank">
-    <strong>Traducción Contextualizada de un Marco de Responsabilidad: Dinámica Nanotecnológica en Argentina</strong>
-  </a>
-  (with 
-  <a href="https://scholar.google.com/citations?user=ja8O6HYAAAAJ&hl=en"
-     target="_blank"
-     style="color: inherit; text-decoration: underline;">Pablo Herrera</a>
-  and
-  <a href="https://scholar.google.com/citations?user=cb-HNq8AAAAJ&hl=en"
-     target="_blank"
-     style="color: inherit; text-decoration: underline;">Javier García Fronti</a>)<br>
-  <em>Nanotecnología y Sociedad en Argentina. Vol. I</em>, pp. 183-200, 2021
-</p>
-    
-<p>
-  <a href="/files/kuhn-tucker.pdf" target="_blank">
-    <strong>Análisis de la Cualificación de las Restricciones en el Teorema de Kuhn–Tucker</strong>
-  </a>
-  (with 
-  <a href="https://scholar.google.com/citations?user=ja8O6HYAAAAJ&hl=en" 
-     target="_blank"
-     style="color: inherit; text-decoration: underline;">
-     Pablo Herrera</a>)<br>
-  <em>Revista de Investigación en Modelos Matemáticos Aplicados a la Gestión y la Economía</em>, 34 (2019): 26–39
-</p>
--->
+      <a href="/files/chapter_nanotecnologia.pdf" target="_blank">
+        <strong>Traducción Contextualizada de un Marco de Responsabilidad: Dinámica Nanotecnológica en Argentina</strong>
+      </a>
+      (with
+      <a href="https://scholar.google.com/citations?user=ja8O6HYAAAAJ&hl=en" target="_blank" style="color: inherit; text-decoration: underline;">Pablo Herrera</a>
+      and
+      <a href="https://scholar.google.com/citations?user=cb-HNq8AAAAJ&hl=en" target="_blank" style="color: inherit; text-decoration: underline;">Javier García Fronti</a>)<br>
+      <em>Nanotecnología y Sociedad en Argentina. Vol. I</em>, pp. 183-200, 2021
+    </p>
 
+    <p>
+      <a href="/files/kuhn-tucker.pdf" target="_blank">
+        <strong>Análisis de la Cualificación de las Restricciones en el Teorema de Kuhn–Tucker</strong>
+      </a>
+      (with
+      <a href="https://scholar.google.com/citations?user=ja8O6HYAAAAJ&hl=en" target="_blank" style="color: inherit; text-decoration: underline;">Pablo Herrera</a>)<br>
+      <em>Revista de Investigación en Modelos Matemáticos Aplicados a la Gestión y la Economía</em>, 34 (2019): 26–39
+    </p>
+    -->
 
-<hr style="border: 0; border-top: 1px solid var(--border); margin-top: 1.5rem; margin-bottom: 0.5rem;">
+    <hr style="border: 0; border-top: 1px solid var(--border); margin-top: 1.5rem; margin-bottom: 0.5rem;">
 
+    <h3 style="margin-top: 1.5rem;">Policy Briefs</h3>
 
-    <h3 style="margin-top: 1.5rem;">Policy Briefs</h3> 
-    
+    <p>
+      <a href="/files/Ballestero (2025) - Fraude en el Examen de Ingreso al Sistema Nacional de Residencias Médicas.pdf" target="_blank">
+        <strong>Fraude en el Examen de Ingreso al Sistema Nacional de Residencias Médicas</strong>
+      </a>, July 2025
+    </p>
 
-<p><a href="/files/Ballestero (2025) - Fraude en el Examen de Ingreso al Sistema Nacional de Residencias Médicas.pdf" target="_blank">
-    <strong>Fraude en el Examen de Ingreso al Sistema Nacional de Residencias Médicas</strong></a>, July 2025 </p>
+    <p>
+      <a href="/files/Ballestero et al (2025) - El Sistema Nacional de Residencias Médicas- Hacia un Acceso Más Equitativo.pdf" target="_blank">
+        <strong>El Sistema Nacional de Residencias Médicas: Hacia un Acceso Más Equitativo</strong>
+      </a> (with Mariana Gudiño and Nahir Lera), June 2025
+    </p>
 
-<p>
-  <a href="/files/Ballestero et al (2025) - El Sistema Nacional de Residencias Médicas- Hacia un Acceso Más Equitativo.pdf" target="_blank">
-    <strong>El Sistema Nacional de Residencias Médicas: Hacia un Acceso Más Equitativo</strong></a> (with Mariana Gudiño and Nahir Lera), June 2025
-</p>
+    <ul style="margin-top: 0.2rem; margin-bottom: 0.2rem;">
+      <li>
+        Media coverage:
+        <a href="https://www.lanacion.com.ar/sociedad/la-lucha-por-un-lugar-asi-fue-el-megaexamen-con-13476-inscriptos-y-7687-vacantes-para-residencias-nid01072025/" target="_blank"><em>La Nación</em></a>,
+        <a href="https://www.clarin.com/sociedad/gobierno-anuncio-cambio-clave-sistema-residencias-medicas_0_yqDEQrtZ1n.html" target="_blank"><em>Clarín</em></a>,
+        <a href="https://econ.la.psu.edu/news/gonzalo-ballestero-ph-d-student-in-economics-is-featured-in-la-nacion-he-is-advising-the-argentine-authorities-in-the-reform-of-their-centralized-assignment-mechanisms-for-medical-students-to-re/" target="_blank"><em>Penn State News</em></a>
+      </li>
+    </ul>
 
-<ul style="margin-top: 0.2rem; margin-bottom: 0.2rem;">
-  <li>
-    Media coverage:
-    <a href="https://www.lanacion.com.ar/sociedad/la-lucha-por-un-lugar-asi-fue-el-megaexamen-con-13476-inscriptos-y-7687-vacantes-para-residencias-nid01072025/" target="_blank"><em>La Nación</em></a>,
-    <a href="https://www.clarin.com/sociedad/gobierno-anuncio-cambio-clave-sistema-residencias-medicas_0_yqDEQrtZ1n.html" target="_blank"><em>Clarín</em></a>,
-    <a href="https://econ.la.psu.edu/news/gonzalo-ballestero-ph-d-student-in-economics-is-featured-in-la-nacion-he-is-advising-the-argentine-authorities-in-the-reform-of-their-centralized-assignment-mechanisms-for-medical-students-to-re/" target="_blank"><em>Penn State News</em></a>
-  </li>
-</ul>
-    
   </div>
 
   <script>
     const btn = document.getElementById('toggleBtn');
+    const moon = document.getElementById('icon-moon');
+    const sun = document.getElementById('icon-sun');
     let dark = false;
     btn.addEventListener('click', () => {
       dark = !dark;
       document.documentElement.setAttribute('data-theme', dark ? 'dark' : '');
-      btn.textContent = dark ? '☀️' : '🌙';
-      btn.style.background = dark ? '#333' : '#e0e0e0';
+      moon.style.display = dark ? 'none' : 'block';
+      sun.style.display = dark ? 'block' : 'none';
     });
   </script>
 
 </body>
 </html>
+
 
 
 
