@@ -117,6 +117,20 @@
     .research a.always-blue {
     color: var(--link);
     }
+
+    .abstract-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--link);
+  padding: 0;
+  margin-top: 0.2rem;
+}
+.abstract-toggle:hover { text-decoration: underline; }
+.abstract-body { display: none; margin-top: 0.4rem; }
+.abstract-body.open { display: block; }
+    
   </style>
 
 </head>
@@ -171,7 +185,8 @@
         <a href="https://rshorrer.weebly.com/" target="_blank">Ran I. Shorrer</a>).
           <a href="https://arxiv.org/abs/2604.09502" target="_blank" class="always-blue">[ArXiv]</a>
       </p>
-      <p align="justify" style="font-size:0.9rem;">
+      <button class="abstract-toggle" onclick="this.nextElementSibling.classList.toggle('open'); this.textContent = this.nextElementSibling.classList.contains('open') ? 'Abstract ▲' : 'Abstract ▼'">Abstract ▼</button>
+      <p class="abstract-body" align="justify" style="font-size:0.9rem;">
         AI agents increasingly operate in multi-agent environments where outcomes depend on coordination. We distinguish primary algorithmic monoculture (baseline action similarity) from strategic algorithmic monoculture, whereby agents adjust similarity in response to incentives. We implement a simple experimental design that cleanly separates these forces, and deploy it on human and large language model (LLM) subjects. LLMs exhibit high levels of baseline similarity (primary monoculture) and, like humans, they regulate it in response to coordination incentives (strategic monoculture). While LLMs coordinate extremely well on similar actions, they lag behind humans in sustaining heterogeneity when divergence is rewarded.
       </p>
 
