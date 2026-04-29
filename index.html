@@ -236,18 +236,28 @@
 
   </div>
 
-  <script>
-    const btn = document.getElementById('toggleBtn');
-    const moon = document.getElementById('icon-moon');
-    const sun = document.getElementById('icon-sun');
-    let dark = false;
-    btn.addEventListener('click', () => {
-      dark = !dark;
-      document.documentElement.setAttribute('data-theme', dark ? 'dark' : '');
-      moon.style.display = dark ? 'none' : 'block';
-      sun.style.display = dark ? 'block' : 'none';
-    });
-  </script>
+<script>
+  const btn = document.getElementById('toggleBtn');
+  const moon = document.getElementById('icon-moon');
+  const sun = document.getElementById('icon-sun');
+
+  // Detectar preferencia del sistema
+  let dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  function applyTheme() {
+    document.documentElement.setAttribute('data-theme', dark ? 'dark' : '');
+    moon.style.display = dark ? 'none' : 'block';
+    sun.style.display = dark ? 'block' : 'none';
+  }
+
+  applyTheme();
+
+  // El botón sigue funcionando para cambiar manualmente
+  btn.addEventListener('click', () => {
+    dark = !dark;
+    applyTheme();
+  });
+</script>
 
 </body>
 </html>
