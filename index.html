@@ -86,15 +86,32 @@
     h2 { font-size: 1.6rem; color: var(--h2-color); border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
     h3 { font-size: 1.2rem; color: var(--text); margin-top: 1.2rem; }
     p, li { font-size: 1.0rem; }
-    img.avatar { display: block; width: 380px; height: auto; border-radius: 4px; }
-    header { display: flex; align-items: center; gap: 2rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
-    .intro {
-      flex: 1;
-      min-width: 280px;
-      max-width: 550px;
-      margin-left: auto;
-      margin-right: auto;
+    header {
+      display: grid;
+      grid-template-columns: auto minmax(280px, 550px);
+      justify-content: center;
+      align-items: center;
+      column-gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+    img.avatar {
+      grid-column: 1;
+      grid-row: 1 / 3;
+      width: 380px;
+      height: auto;
+      border-radius: 4px;
+    }
+    .intro-lead {
+      grid-column: 2;
+      grid-row: 1;
       text-align: center;
+      align-self: end;
+    }
+    .intro-rest {
+      grid-column: 2;
+      grid-row: 2;
+      text-align: center;
+      align-self: start;
     }
     footer {
       margin-top: 3rem;
@@ -127,9 +144,19 @@
     }
 
     @media (max-width: 600px) {
-      header { flex-direction: column-reverse; text-align: center; }
-      img.avatar { display: block; width: 300px; height: auto; border-radius: 4px; }
-      .intro { text-align: center; width: 100%; }
+      header {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        row-gap: 1rem;
+      }
+      img.avatar,
+      .intro-lead,
+      .intro-rest {
+        grid-column: 1;
+        grid-row: auto;
+      }
+      img.avatar { width: 300px; }
+      .intro-rest { width: 100%; }
     }
 
     /* Research section links: black by default, blue + underline on hover */
@@ -181,21 +208,23 @@
 
     <!-- Header -->
     <header>
-      <img src="/images/avatar.jpg" alt="Gonzalo Ballestero" class="avatar">
-      <div class="intro">
-        <div style="text-align: center;">
-          <h1 style="margin-bottom: 0.2em;">Gonzalo Ballestero</h1>
-        </div>
-        <p align="center" style="margin-top: 1.5em;">
+      <div class="intro-lead">
+        <h1 style="margin-bottom: 0.2em;">Gonzalo Ballestero</h1>
+        <p style="margin-top: 1.5em;">
           I am a Ph.D. candidate in Economics at Penn State University.
         </p>
-      <p style="text-align: justify;">
-  I am an applied microeconomist. I broadly study how to <em>design markets to work better in practice</em>. My recent work focuses on the use of algorithms and AI systems, and their implications for markets.
-      </p>
-      <p style="text-align: center;">I am a co-organizer of the <a href="https://ai-initiative.psu.edu/" target="_blank">AI and the Economy Initiative</a></p>
-      <p style="text-align: center;">Here you can find my <a href="/files/GBallestero-CV.pdf" target="_blank">curriculum vitae</a></p>
-      <p style="text-align: center;">You can contact me at <a href="mailto:gballestero@psu.edu" target="_blank">gballestero@psu.edu</a></p>
-        
+      </div>
+    
+      <img src="/images/avatar.jpg" alt="Gonzalo Ballestero" class="avatar">
+    
+      <div class="intro-rest">
+        <p style="text-align: justify;">
+          I am an applied microeconomist. I broadly study how to <em>design markets to work better in practice</em>. My recent work focuses on the use of algorithms and AI systems, and their implications for markets.
+        </p>
+        <p style="text-align: center;">I am a co-organizer of the <a href="https://ai-initiative.psu.edu/" target="_blank">AI and the Economy Initiative</a></p>
+        <p style="text-align: center;">Here you can find my <a href="/files/GBallestero-CV.pdf" target="_blank">curriculum vitae</a></p>
+        <p style="text-align: center;">You can contact me at <a href="mailto:gballestero@psu.edu" target="_blank">gballestero@psu.edu</a></p>
+
 
 
         <div style="display:flex; justify-content:center; gap:28px; align-items:center; margin-top:0.5rem;">
