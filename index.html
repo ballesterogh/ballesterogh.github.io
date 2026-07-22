@@ -148,20 +148,28 @@
     }
 
     @media (max-width: 600px) {
-      header {
-        grid-template-columns: 1fr;
-        justify-items: center;
-        row-gap: 1rem;
-      }
-      img.avatar {
-        grid-column: 1;
-      }
-      .intro-text {
-        grid-column: 1;
-        width: 100%;
-      }
-      img.avatar { width: 300px; }
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 1rem;
     }
+    .intro-text {
+      display: contents; /* "desarma" el wrapper para poder reordenar sus hijos */
+    }
+    .intro-lead {
+      order: 1;
+      margin-bottom: 0;
+    }
+    img.avatar {
+      order: 2;
+      width: 300px;
+    }
+    .intro-rest {
+      order: 3;
+      width: 100%;
+    }
+  }
 
     /* Research section links: black by default, blue + underline on hover */
     .research a {
