@@ -147,27 +147,34 @@
       transition: fill 0.2s;
     }
 
-    @media (max-width: 600px) {
+  @media (max-width: 600px) {
     header {
       display: flex;
       flex-direction: column;
       align-items: center;
-      row-gap: 1rem;
+      row-gap: 1.5rem; /* este valor es el que ves entre los tres bloques */
     }
     .intro-text {
-      display: contents; /* "desarma" el wrapper para poder reordenar sus hijos */
+      display: contents;
     }
     .intro-lead {
       order: 1;
       margin-bottom: 0;
     }
+    .intro-lead p {
+      margin-bottom: 0; /* anula el margen inferior default del <p> */
+    }
     img.avatar {
       order: 2;
       width: 300px;
+      margin: 0; /* anula cualquier margen en la foto */
     }
     .intro-rest {
       order: 3;
       width: 100%;
+    }
+    .intro-rest p:first-child {
+      margin-top: 0; /* anula el margen superior default del primer <p> */
     }
   }
 
