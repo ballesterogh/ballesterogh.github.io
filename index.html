@@ -221,6 +221,17 @@
  .paper-entry {
   margin-top: 2rem;
  }
+
+  .pub-meta {
+  font-size: 0.85em;      
+  color: #b0b0b0;         /* opcional, un gris más suave para jerarquía visual */
+  line-height: 1.4;
+}
+
+.pub-title {
+  font-size: 1.15em;      
+  font-weight: 700;
+}
     
   </style>
 
@@ -297,17 +308,18 @@
 -->
       <h3 style="margin-top: 2rem;">Publications</h3>
 
-      
-<p>
+      <p>
     <a href="https://arxiv.org/pdf/2604.09502" target="_blank">
       <strong>Strategic Algorithmic Monoculture: Experimental Evidence from Coordination Games</strong></a>
     <br>
-    with
-    <a href="https://faculty.ist.psu.edu/hadi/" target="_blank" class="coauthor">Hadi Hosseini</a>,
-    <a href="https://samarthkhanna.github.io/" target="_blank" class="coauthor">Samarth Khanna</a>, and
-    <a href="https://rshorrer.weebly.com/" target="_blank" class="coauthor">Ran I. Shorrer</a>
-    <br>
-    <em>Proceedings of the 27th ACM Conference on Economics and Computation (EC ’26), Extended Abstract</em>, April 2026
+    <span class="pub-meta">
+      with
+      <a href="https://faculty.ist.psu.edu/hadi/" target="_blank" class="coauthor">Hadi Hosseini</a>,
+      <a href="https://samarthkhanna.github.io/" target="_blank" class="coauthor">Samarth Khanna</a>, and
+      <a href="https://rshorrer.weebly.com/" target="_blank" class="coauthor">Ran I. Shorrer</a>
+      <br>
+      <em>Proceedings of the 27th ACM Conference on Economics and Computation (EC '26), Extended Abstract</em>, April 2026
+    </span>
     <br>
     <button class="abstract-toggle" onclick="document.getElementById('abs1').classList.toggle('open'); this.querySelector('span').textContent = document.getElementById('abs1').classList.contains('open') ? 'Hide Abstract' : 'Abstract'"><span>Abstract</span></button>
     <a href="https://arxiv.org/abs/2604.09502" target="_blank" class="always-blue" style="margin-left: 1.5rem;">ArXiv</a>
@@ -321,7 +333,9 @@
     <a href="https://www.sciencedirect.com/science/article/pii/S0167718726000342" target="_blank">
       <strong>Algorithmic Collusion under Sequential Pricing and Stochastic Costs</strong></a>
     <br>
+    <span class="pub-meta">
     <em>International Journal of Industrial Organization</em>, June 2026
+    </span>
     <br>
     <button class="abstract-toggle" onclick="document.getElementById('abs2').classList.toggle('open'); this.querySelector('span').textContent = document.getElementById('abs2').classList.contains('open') ? 'Hide Abstract' : 'Abstract'"><span>Abstract</span></button>
     <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5203084" target="_blank" class="always-blue" style="margin-left: 1.5rem;">SSRN</a>
@@ -338,21 +352,22 @@
           
       <hr style="border: 0; border-top: 1px solid var(--border); margin-top: 1.5rem; margin-bottom: 0.5rem;">
 
-      <h3 style="margin-top: 1.5rem;">Policy Briefs</h3>
-
-      <p>
-       <a href="https://ballesterogh.github.io/files/Ballestero%20(2025)%20-%20Fraude%20en%20el%20Examen%20de%20Ingreso%20al%20Sistema%20Nacional%20de%20Residencias%20Me%CC%81dicas.pdf" target="_blank">
-            <strong>Cheating in the Medical Residency Entrance Exam</strong>
-    </a> (<em>in Spanish</em>), July 2025
-      </p>
+<h3 style="margin-top: 1.5rem;">Policy Briefs</h3>
   <p>
-    
+   <a href="https://ballesterogh.github.io/files/Ballestero%20(2025)%20-%20Fraude%20en%20el%20Examen%20de%20Ingreso%20al%20Sistema%20Nacional%20de%20Residencias%20Me%CC%81dicas.pdf" target="_blank">
+        <strong>Cheating in the Medical Residency Entrance Exam</strong>
+  </a>
+  <span class="pub-meta">(<em>in Spanish</em>), July 2025</span>
+  </p>
+  <p>    
 <p class="paper-entry">
     <a href="https://ballesterogh.github.io/files/Ballestero%20et%20al%20(2025)%20-%20El%20Sistema%20Nacional%20de%20Residencias%20Me%CC%81dicas-%20Hacia%20un%20Acceso%20Ma%CC%81s%20Equitativo.pdf" target="_blank">
       <strong>Redesigning the Medical Match in Argentina: Toward More Equitable Access</strong>
-    </a> (<em>in Spanish</em>), June 2025
+    <span class="pub-meta">
+    (<em>in Spanish</em>), June 2025
     <br>
     with Mariana Gudiño and Nahir Lera
+    </span>
     <br>
     <span class="media-label">Media:</span>
     <em><a href="https://www.clarin.com/sociedad/gobierno-anuncio-cambio-clave-sistema-residencias-medicas_0_yqDEQrtZ1n.html" target="_blank" class="always-blue">Clarín</a></em>
