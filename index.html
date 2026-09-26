@@ -179,9 +179,10 @@
       .intro-rest p:first-child {
         margin-top: 0;
       }
-      .intro-rest p {
-        text-align: center !important;
-      }
+      .intro-rest p.intro-desc {
+      text-align: justify !important;
+      hyphens: auto;
+    }
 }
 
     /* Research section links: black by default, blue + underline on hover */
@@ -294,7 +295,7 @@
             I am a Ph.D. candidate in Economics at Penn State University. 
           </p>
           -->
-            <p style="text-align: left;">
+            <p class="intro-desc" style="text-align: left;">
               I am a PhD candidate in Economics at Penn State University. I work on Industrial Organization, Market Design, and the Economics of AI.  
             <!--
               , with a focus on matching markets and the digital economy
